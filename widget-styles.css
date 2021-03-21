@@ -1,0 +1,27 @@
+@import url(//db.onlinewebfonts.com/c/002b944b211d383987536f1ecf684bca?family=Herculanum);
+
+* {
+    font-family: 'Herculanum', sans-serif;
+    overflow: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.sub-goal-container {
+  color: {{subGoalColor}};
+  display: flex;
+  flex-direction: column;
+  font-family: "Herculanum";
+  font-size: {{subGoalSize}}px;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  -webkit-text-stroke: {{subGoalStrokeWidth}}px {{subGoalStrokeColor}};
+}
+
+.sub-goal__goal-number.notice::after {
+    content: "*";
+  	color: {{noticeColor}};
+}
