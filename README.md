@@ -1,5 +1,4 @@
 # subGoalCountdown
-Sub Goal Countdown
 
 1.) Go to your Stream Elements dashboard & create a new blank overlay in My Overlays.
 
@@ -19,6 +18,6 @@ Sub Goal Countdown
 
 9.) Repeat steps 6 - 8 for each tab & its corresponding file.
 
-10.) Once this is complete, click Done on the Stream Elements editor & you should now see a new custom built Sub Goal tracker.
+10.) Once this is complete, click Done on the Stream Elements editor & you should now see a new custom built Sub Goal Countdown.
 
 You should also have all of your setup options on the left.
