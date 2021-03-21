@@ -1,0 +1,43 @@
+{
+  "subGoal": {
+    "type": "number",
+    "label": "Subscriber Goal",
+    "value": 5,
+    "step": 1,
+    "min": 0
+  },
+  "subGoalColor": {
+    "type": "colorpicker",
+    "label": "Sub Goal Font Color",
+    "value": "rgba(0, 0, 0, 1)"
+  },
+  "subGoalSize": {
+    "type": "number",
+    "label": "Sub Goal Font Size in PX",
+    "value": 112,
+    "step": 1,
+    "min": 0
+  },
+  "subGoalStrokeColor": {
+    "type": "colorpicker",
+    "label": "Sub Goal Font Stroke Color",
+    "value": "rgba(0, 0, 0, 1)"
+  },
+  "subGoalStrokeWidth": {
+    "type": "number",
+    "label": "Sub Goal Font Stroke Width in PX",
+    "value": 5,
+    "step": 1,
+    "min": 0
+  },
+    "noticeColor": {
+    "type": "colorpicker",
+    "label": "Subscriber Goal Asterisk Color",
+    "value": "rgba(255, 0, 0, 1)"
+  },
+  "clearCmd": {
+    "type": "text",
+    "label": "Clear notification command",
+    "value": "!clearNotice"
+  }
+ }
