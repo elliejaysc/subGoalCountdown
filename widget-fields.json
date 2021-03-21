@@ -4,7 +4,8 @@
     "label": "Subscriber Goal",
     "value": 10,
     "step": 1,
-    "min": 0
+    "min": 0,
+    "max": 10
   },
   "subGoalColor": {
     "type": "colorpicker",
