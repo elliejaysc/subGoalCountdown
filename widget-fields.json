@@ -2,14 +2,14 @@
   "subGoal": {
     "type": "number",
     "label": "Subscriber Goal",
-    "value": 5,
+    "value": 10,
     "step": 1,
     "min": 0
   },
   "subGoalColor": {
     "type": "colorpicker",
     "label": "Sub Goal Font Color",
-    "value": "rgba(0, 0, 0, 1)"
+    "value": "rgba(255, 255, 255, 1)"
   },
   "subGoalSize": {
     "type": "number",
@@ -26,7 +26,7 @@
   "subGoalStrokeWidth": {
     "type": "number",
     "label": "Sub Goal Font Stroke Width in PX",
-    "value": 5,
+    "value": 4,
     "step": 1,
     "min": 0
   },
