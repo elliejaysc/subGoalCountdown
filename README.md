@@ -1,5 +1,7 @@
 # subGoalCountdown
 
+Setup
+
 1.) Go to your Stream Elements dashboard & create a new blank overlay in My Overlays.
 
 2.) Leave the overlay resolution set to 1080p & click start
@@ -21,3 +23,16 @@
 10.) Once this is complete, click Done on the Stream Elements editor & you should now see a new custom built Sub Goal Countdown.
 
 You should also have all of your setup options on the left.
+
+How it works
+---
+
+On load, it checks your total number of subs & grabs the last digit (0 - 9).
+
+It subtracts that from the goal number (10) & displays that.
+
+When a sub comes in it subtracts 1 from the goal as it stands. When it hits zero it automatically rolls over to the goal again & adds the asterisk.
+
+The asterisk will stay until you remove it with a chat command (the default is !clearNotice)
+
+The widget also has controls along the left to change the font size, the font color, the stroke size & color, the asterisk color, & the chat command to clear it.
