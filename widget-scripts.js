@@ -1,6 +1,7 @@
 const d = document;
 const goalValue = d.querySelector(".sub-goal__goal-number");
-let subs, goal, lastDigit, countDown, notification = false, clearCmd;
+let subs, goal, lastDigit, countDown, notification = false, clearCmd, fieldData;
+let cdObj = {};
 
 let getLastDigit = (str, num)=>{
   return num.toString();
@@ -8,15 +9,23 @@ let getLastDigit = (str, num)=>{
 
 window.addEventListener('onWidgetLoad', function (obj) {
   
-  	const fieldData = obj.detail.fieldData;
-    const data = obj.detail.session.data;
-  	goal = fieldData.subGoal;
+  	fieldData = obj.detail.fieldData;
   	clearCmd = fieldData.clearCmd || "!clearNotice";
-  	subs = data["subscriber-total"].count;
-  	lastDigit = +[...getLastDigit`${subs}`].pop();
+  	goal = fieldData.subGoal;
   	
-  	countDown = goal - lastDigit == goal ? goal : goal - lastDigit;
-  	goalValue.innerText = countDown;
+	SE_API.store.get('lephCounter').then(obj => {
+      	
+      	if(obj === null) {
+          
+          countDown = cdObj.value = goal;
+          SE_API.store.set('lephCounter', cdObj);	
+        }
+      	else {
+		  countDown = obj.value;
+        }
+
+      	goalValue.innerText = countDown;
+	});
 });
 
 window.addEventListener('onEventReceived', function (obj) {
@@ -28,7 +37,7 @@ window.addEventListener('onEventReceived', function (obj) {
     const event = obj.detail.event;
   
 	if (listener === 'subscriber') {
-  		//countDown = countDown - 1 == 0 ? goal : countDown - 1;
+      
       	if(countDown - 1 == 0) {
           countDown = goal;
           notification = true;
@@ -37,12 +46,18 @@ window.addEventListener('onEventReceived', function (obj) {
       	else {
           countDown = countDown - 1;
         }
-      	goalValue.innerText = countDown;
+
+      	goalValue.innerText = cdObj.value = countDown;
+      	SE_API.store.set('lephCounter', cdObj);
     }
   
   	if (listener === 'message' && obj.detail.event.data.text.trim().toLowerCase() === clearCmd.trim().toLowerCase() && notification) {
-      	console.log("This will clear the notice!");
       	goalValue.classList.remove("notice");
-    }	
+    }
+  
+  	if (listener === 'message' && obj.detail.event.data.text.trim().toLowerCase() === "!reset") {
+      	goalValue.innerText = cdObj.value = goal;
+      	SE_API.store.set('lephCounter', cdObj);
+    }
 });
 
