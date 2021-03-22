@@ -27,13 +27,11 @@ You should also have all of your setup options on the left.
 How it works
 ---
 
-On load, it checks your total number of subs & grabs the last digit (0 - 9).
+On load, it checks for the current stored value, if there isn't a value stored the value is set to the goal value.
 
-It subtracts that from the goal number (10) & displays that.
+When a sub comes in it subtracts 1 from the goal as it stands. When it hits zero it automatically rolls over to the goal again & adds an asterisk.
 
-When a sub comes in it subtracts 1 from the goal as it stands. When it hits zero it automatically rolls over to the goal again & adds the asterisk.
-
-The asterisk will stay until you remove it with a chat command (the default is !clearNotice)
+The asterisk will stay until you remove it with the configurable chat command (the default is *!clearNotice*)
 
 The widget also has controls along the left to change the font size, the font color, the stroke size & color, the asterisk color, & the chat command to clear it.
 
